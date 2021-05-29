@@ -8,7 +8,7 @@ Aeq=[-2 0 1];
 beq=[1];
 lb=[0;0;0];
 [x,M]=linprog(f,A,b,Aeq,beq,lb);
-disp('最优值为：')
+disp('The Optimal Value is:')
 z=-M
-disp('最优解为：')
+disp('The Optimal Solution is:')
 x
