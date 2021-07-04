@@ -1,0 +1,10 @@
+X=xlsread('F:\建模数据\matlab_data\PCA_data.xlsx','B1:I15')
+g=zscore(X);%标准化
+r=corrcoef(g);%计算协方差矩阵
+[x,y,z]=pcacov(r);%PCA，x:主成分系数；y:特征值；z:各个主成分的贡献率
+num=3;
+df=g*x(:,1:num);
+tf=df*z(1:num)/100;%综合评价
+[stf,ind]=sort(tf,'descend'); %'ascend' 表示升序（默认值），'descend' 表示降序。
+stf=stf'
+ind=ind'
